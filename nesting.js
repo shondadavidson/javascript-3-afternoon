@@ -6,7 +6,7 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
-////////// PROBLEM 1 //////////
+////////// PROBLEM 1 //////////  PASSED
 
 // Do not edit the code below.
 var employees = [
@@ -44,17 +44,26 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
+  Create a function called 'employeeUpdater' that takes no parameters. 
+  employeeUpdater will loop over the array above and perform the following:
     1. If employee's first name is Theo, remove that employee because he just got fired.
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
 
-//Code Here
+// Code Here
+function employeeUpdater(){
+for(let i = 0; i<employees.length; i++){
+  if (employees[i].firstName === 'Theo'){
+    employees.splice(i, 1)
+  } if (employees[i].firstName === 'Lorie'){
+employees[i].department = 'HR'
+  }
 
+}
+return employees }
 
-
-////////// PROBLEM 2 //////////
+////////// PROBLEM 2 //////////  PASSED
 
 // Do not edit the code below.
 var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
@@ -70,6 +79,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates(arr){
+  
+  for(let i=0; i<arr.length; i++){
+    for(let j=arr.length-1; j>= 0; j--){
+      if(arr[i] === arr[j]){
+        arr.splice(j, 1)
+        i++
+      }
+    }
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,12 +118,13 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];  //done
+
+var fluffy2ndFriend = cat.catFriends[1].name  //done
 
 
 
-////////// PROBLEM 4 //////////
+////////// PROBLEM 4 //////////   PASSED but can I pass the arr into the function (arr)
 
 // Do not edit the code below.
 var myCar = {
@@ -138,7 +160,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for(let i = 0; i < myCar.accidents.length ; i++){
+    myCar.accidents[i].atFaultForAccident = false
+  }
+
+}
 
 
 
@@ -159,4 +186,14 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+function looper(arr){
+  for (i=0; i < arr.length; i++){
+    for (j=0; j < arr[i].length; j++){
+      if(arr[i][j] % 2 === 0){
+        arr[i][j] = 'even'
+      }
+      else{arr[i][j] = 'odd'}
+    }
+  }
+  return arr;
+}

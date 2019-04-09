@@ -6,7 +6,7 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
-////////// PROBLEM 1 //////////
+////////// PROBLEM 1 ////////// PASSED
 
 // Do not edit the code below.
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
@@ -21,11 +21,15 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter((elem, i, arr) => {
+  return elem % 2 === 0
+})
+
+// = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 
 
-////////// PROBLEM 2 //////////
+////////// PROBLEM 2 //////////  PASSED
 
 // Do not edit the code below.
 const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
@@ -44,11 +48,15 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices  = prices.map((elem, i, arr) => {
+  return elem *= 1.07 
+})
+
+// = prices.map(/* Provide Your Callback Here );
 
 
 
-////////// PROBLEM 3 //////////
+////////// PROBLEM 3 //////////  PASSED
 
 // Do not edit the code below.
 const populations = [8175133, 3792621, 2695598, 2100263];
@@ -63,14 +71,20 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce( (acc, val, i, arr) => 
+{ return acc += val})
+
+//  = populations.reduce(/* Provide Your Callback Here */)
 
 
 
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
-const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulbabunny","CP":135},
+const monstersInYourPocket = [{
+  "monster":"Bulbabunny",
+  "CP":156},
+{"monster":"Bulbabunny","CP":135},
 {"monster":"Bulbabunny","CP":250},{"monster":"Ponylopse","CP":277},{"monster":"Ponylopse","CP":184},
 {"monster":"Pikadoughnet","CP":207},{"monster":"Bulbabunny","CP":139},{"monster":"Pikadoughnet","CP":47},
 {"monster":"Pikadoughnet","CP":175},{"monster":"WaterHorsia","CP":26},{"monster":"Ponylopse","CP":19},
@@ -89,7 +103,10 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter( monster => monster.CP > 200 )
+console.log(myStrongest)
+
+// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
 
@@ -106,7 +123,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals // Code here
+let orderTotals = orders.map( (elm, i , arr) => {orders[i] = orders.price + orders.tax})
+ console.log(orderTotals)
+// Code here
 
 
 
@@ -126,6 +145,6 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+// let bobsTotal = purchases.reduce( (var, i, arr) => )
 
 
